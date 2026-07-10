@@ -72,6 +72,11 @@
   window.SprintAuth = {
     auth: auth, rest: rest, token: token, onReady: onReady, gate: gate,
     signIn: signIn, signUp: signUp, signOut: signOut, updateProfile: updateProfile,
-    profile: function () { return _profile; }, LOGIN_PAGE: LOGIN_PAGE
+    profile: function () { return _profile; }, LOGIN_PAGE: LOGIN_PAGE,
+    isCoach: async function () {
+      var u = auth.currentUser; if (!u) return false;
+      var v = await rest.get("coaches/" + u.uid);
+      return v === true;
+    }
   };
 })();

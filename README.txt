@@ -25,12 +25,24 @@ Upload ALL these web files to your GitHub repo (keep them together in one folder
    databaseURL, projectId, storageBucket, messagingSenderId, appId) with your project's.
 3. Realtime Database → Rules → paste database.rules.json → Publish.
    (Re-paste and Publish again if you already deployed an earlier version — this
-   copy adds an "activity" node the Coach Dashboard's Program Impact report needs.)
+   copy adds "activity" and "coaches" nodes the Coach Dashboard needs.)
 4. Authentication → Sign-in method → enable Email/Password.
 5. After deploying: Authentication → Settings → Authorized domains → add your
    hosting domain (e.g. your github.io domain).
 
-## Coach dashboard
+## Coach dashboard — restricting access (students can't self-promote)
+By default nobody can open coach.html and see it — it now checks a `coaches/<uid>`
+flag in the database that users cannot set themselves (there's no sign-up field or
+app screen for it). To grant someone instructor access:
+1. Firebase console → Authentication → Users → find their row → copy their **User UID**.
+2. Realtime Database → Data tab → at the root, add a child node named `coaches`
+   (if it doesn't exist yet) → inside it, add a child named exactly their UID,
+   with value `true` (type: boolean).
+3. They may need to sign out and back in (or just reload coach.html) to pick it up.
+Anyone without that flag sees a polite "Instructor access only" screen instead of
+candidate data.
+
+## Coach dashboard — using it
 - Open coach.html (link is in the games hub top bar).
 - "By class code": type the class/cohort code you gave candidates → see each
   candidate's tier, best score, games played, and last-active (7-day inactivity flagged).

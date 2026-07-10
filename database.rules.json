@@ -48,12 +48,18 @@
     "activity": {
       "daily": {
         "$date": {
-          ".read": "auth != null",
+          ".read": "auth != null && root.child('coaches').child(auth.uid).val() === true",
           "$emailKey": {
             ".write": "auth != null",
             ".validate": "newData.child('email').val() === auth.token.email"
           }
         }
+      }
+    },
+
+    "coaches": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid"
       }
     }
   }

@@ -68,8 +68,18 @@ function ago(t){ if(!t)return "—"; var s=Math.floor((Date.now()-t)/1000);
   if(s<60)return "just now"; if(s<3600)return Math.floor(s/60)+"m ago"; if(s<86400)return Math.floor(s/3600)+"h ago";
   var d=Math.floor(s/86400); if(d<30)return d+"d ago"; return Math.floor(d/30)+"mo ago"; }
 
-SprintAuth.gate().then(function(ctx){
+SprintAuth.gate().then(async function(ctx){
   PROF=ctx.profile||{};
+  var allowed = await SprintAuth.isCoach();
+  if(!allowed){
+    document.getElementById("loading").innerHTML =
+      '<div style="max-width:420px;text-align:center;">'+
+        '<div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;">Instructor access only</div>'+
+        '<div style="font-size:13.5px;color:var(--muted);line-height:1.6;">This dashboard is restricted to program coordinators. If that\'s you, ask whoever administers the Firebase project to grant your account access.</div>'+
+        '<a href="games.html" style="display:inline-block;margin-top:18px;font-size:13.5px;font-weight:700;color:var(--blue);">← Back to games</a>'+
+      '</div>';
+    return;
+  }
   CODE=(function(){try{return localStorage.getItem(CODE_KEY)||"";}catch(e){return "";}})()||PROF.classCode||"";
   document.getElementById("loading").classList.add("hidden");
   document.getElementById("app").classList.remove("hidden");
