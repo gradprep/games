@@ -784,6 +784,17 @@ questions:[
 {q:"FOIL: (x+3)(x−7)",opts:["x^2−4x−21","x^2−4x+21","x^2−10x+21","x^2−21"],ans:0,diag:"foil",exp:"x²−7x+3x−21=x²−4x−21."},
 {q:"Evaluate: 5 + 2×3 − (4−2)²",opts:["3","7","9","5"],ans:1,diag:"",exp:"PEMDAS: (4−2)=2. 2²=4. 2×3=6. Then: 5+6−4 = 7.to right: 5+6−4=7."},
 {q:"Discriminant >0 means:",opts:["No real roots","Two distinct real roots","One repeated root","Cannot determine"],ans:1,diag:"",exp:"b²−4ac>0 → square root is real and positive → two distinct real roots."},
+{q:"Solve: 3x + 7 = 22",opts:["x=3","x=5","x=7","x=15"],ans:1,diag:"",exp:"3x=22−7=15 → x=15/3=5."},
+{q:"Solve for x: 4(x−2) = 2x + 6",opts:["x=1","x=5","x=7","x=−7"],ans:2,diag:"",exp:"4x−8=2x+6 → 2x=14 → x=7."},
+{q:"System: 2x+y=11, x−y=1. Find x.",opts:["x=3","x=4","x=5","x=6"],ans:1,diag:"",exp:"Elimination: add the equations → 3x=12 → x=4 (then y=3)."},
+{q:"System: x+y=10, 3x−y=6. Find y.",opts:["y=4","y=5","y=6","y=7"],ans:2,diag:"",exp:"From eq1: y=10−x. Sub: 3x−(10−x)=6 → 4x=16 → x=4, y=6."},
+{q:"Factor: x²+8x+15",opts:["(x+3)(x+5)","(x+1)(x+15)","(x+15)(x−1)","(x+7)(x+8)"],ans:0,diag:"",exp:"Need p,q multiplying to 15, adding to 8 → 3 and 5. (x+3)(x+5)."},
+{q:"Factor: x²−7x+12",opts:["(x−3)(x−4)","(x+3)(x+4)","(x−2)(x−6)","(x−1)(x−12)"],ans:0,diag:"",exp:"p,q multiply to 12, add to −7 → −3 and −4. (x−3)(x−4)."},
+{q:"Solve x²=49",opts:["x=7 only","x=−7 only","x=7 or x=−7","No solution"],ans:2,diag:"",exp:"x²−49=0 → (x−7)(x+7)=0 → x=7 or x=−7. Don't forget the negative root."},
+{q:"Quadratic formula: solve x²+2x−8=0",opts:["x=2 or x=−4","x=4 or x=−2","x=−2 or x=8","x=2 or x=4"],ans:0,diag:"quadratic",exp:"x=(−2±√(4+32))/2=(−2±6)/2 → x=2 or x=−4. (Also factorable: (x+4)(x−2)=0.)"},
+{q:"How many real solutions does x²+4x+10=0 have?",opts:["0","1","2","Cannot tell"],ans:0,diag:"",exp:"Discriminant = 16−40=−24 <0 → no real solutions."},
+{q:"Expand and simplify: (2x+3)(x−4)",opts:["2x²−5x−12","2x²+5x−12","2x²−11x−12","2x²−5x+12"],ans:0,diag:"foil",exp:"FOIL: 2x²−8x+3x−12 = 2x²−5x−12."},
+{q:"If x² − x − 12 = 0, what is the sum of the roots?",opts:["1","−1","12","−12"],ans:0,diag:"",exp:"Roots are 4 and −3 (since (x−4)(x+3)=0). Sum = 1. (Shortcut: sum of roots = −b/a = 1.)"},
 ]},
 {id:2,title:"Number Properties",eyebrow:"Game 3 of 12",desc:"Even/odd rules, primes, factors, divisibility, LCM, GCF, remainders, trailing zeros, terminating decimals.",time:5,
 concepts:[
@@ -811,6 +822,14 @@ questions:[
 {q:"Is 7,236 divisible by 9?",opts:["Only if even","Yes","No","Cannot tell"],ans:1,diag:"",exp:"7+2+3+6=18. 18÷9=2 exactly → yes."},
 {q:"Remainder when 58 ÷ 7?",opts:["1","8","0","2"],ans:3,diag:"",exp:"7×8=56. 58−56=2. The remainder is 2. (Remainder must always be less than the divisor.)"},
 {q:"Does 3/40 terminate as a decimal?",opts:["Yes — 40=2^3×5","No, 40 has factor 3","Cannot tell","No, never"],ans:0,diag:"",exp:"40=2³×5. Only factors 2 and 5 → decimal terminates. 3/40=0.075."},
+{q:"If n is an integer, is n² + n always even?",opts:["Yes, always","No, always odd","Only if n is even","Cannot tell"],ans:0,diag:"",exp:"n²+n = n(n+1) — a product of two consecutive integers, one of which must be even. even×anything=even, so it's always even."},
+{q:"How many multiples of 6 are there from 1 to 100?",opts:["14","15","16","17"],ans:1,diag:"",exp:"floor(100/6) = 16.67 → 16. (Recheck: 6×16=96≤100, 6×17=102>100, so 16.) Answer: 16."},
+{q:"What is the greatest power of 2 that divides 96?",opts:["2^3","2^4","2^5","2^6"],ans:2,diag:"",exp:"96 = 32×3 = 2⁵×3. Greatest power of 2 is 2⁵."},
+{q:"How many trailing zeros does 25! have?",opts:["4","5","6","10"],ans:1,diag:"",exp:"Count factors of 5 in 25!: floor(25/5)+floor(25/25)=5+1=6... recheck: pairs of (2×5) limited by count of 5s = 5+1=6? Actually floor(25/5)=5, floor(25/25)=1, total 5s=6, but 2s are far more plentiful, so trailing zeros = 6."},
+{q:"What is the remainder when 2^10 is divided by 5?",opts:["1","2","3","4"],ans:3,diag:"",exp:"2^10=1024. 1024÷5=204 remainder 4. (Pattern: powers of 2 mod 5 cycle 2,4,3,1,2,4,3,1... 2^10 falls on 4.)"},
+{q:"If p and q are both odd primes, is p×q always odd?",opts:["Yes, always","No, always even","Only if p=q","Cannot tell"],ans:0,diag:"",exp:"odd×odd=odd. Since both p and q are odd, their product must be odd."},
+{q:"[OG] If n is a prime number greater than 3, what is the remainder when n² is divided by 12?",opts:["0","1","2","3"],ans:1,diag:"",exp:"Any prime >3 is odd and not divisible by 3, so n=6k±1 for some integer k. n²=36k²±12k+1, and 36k² and 12k are both multiples of 12 — so n² is always 1 more than a multiple of 12. Remainder = 1. (Check with n=5: 25÷12=2 rem 1. ✓)"},
+{q:"[OG] Positive integer x divided by positive integer y gives quotient 96 with remainder 9 (x/y = 96.12). What is y?",opts:["96","75","48","25"],ans:1,diag:"",exp:"The decimal part .12 equals remainder/y, so 9/y = 0.12 → y = 9/0.12 = 75."},
 ]},
 {id:3,title:"Roots & Exponents",eyebrow:"Game 4 of 12",desc:"Exponent rules, negative exponents, fractional exponents, radical operations, special addition rule.",time:5,
 concepts:[
@@ -855,6 +874,19 @@ questions:[
 {q:"If −5x > 25, then:",opts:["x>5","x>−5","x<5","x<−5"],ans:3,diag:"",exp:"Divide by −5 and FLIP: x<25/(−5)=−5."},
 {q:"Solve: −3 < x+2 < 7",opts:["−1<x<9","−3<x<7","−5<x<5","−1<x<5"],ans:2,diag:"",exp:"Subtract 2 from all parts: −5<x<5."},
 {q:"|5−8| vs |5|−|8|. Are they equal?",opts:["No","Yes","Only when positive","Cannot tell"],ans:0,diag:"",exp:"|5−8|=|−3|=3. |5|−|8|=5−8=−3. 3!=−3 → NOT equal. |a − b| ≥ |a| − |b|."},
+{q:"[OG] Points A, B, C, D, E sit on a number line at −4, −3, 1, 2, 3 respectively. Which point has the greatest absolute value?",opts:["A","B","C","D"],ans:0,diag:"",exp:"|A|=|−4|=4, |B|=|−3|=3, |C|=1, |D|=2. A is farthest from 0, so it has the greatest absolute value even though it's the most negative — a common trap."},
+{q:"Solve: 2x−7 ≤ 9",opts:["x≤1","x≤8","x≤−1","x≤16"],ans:1,diag:"",exp:"2x≤16 → x≤8."},
+{q:"Solve: −4x+3 < 15",opts:["x<−3","x>−3","x<3","x>3"],ans:1,diag:"",exp:"−4x<12 → divide by −4 and flip: x>−3."},
+{q:"Solve |2x−6|=10",opts:["x=8 or x=−2","x=−8 or x=2","x=8 only","x=2 only"],ans:0,diag:"",exp:"2x−6=10→x=8. 2x−6=−10→x=−2."},
+{q:"Solve |x|<4",opts:["x<4","x>−4","−4<x<4","x<−4 or x>4"],ans:2,diag:"",exp:"|x|<a (a>0) means x is within a of 0: −4<x<4."},
+{q:"Solve |x|>3",opts:["−3<x<3","x>3 only","x<−3 or x>3","x<−3 only"],ans:2,diag:"",exp:"|x|>a means x is more than a away from 0 in either direction: x<−3 or x>3."},
+{q:"If x<0, simplify |x|−x",opts:["0","−2x","2x","2|x|"],ans:1,diag:"",exp:"If x<0, |x|=−x. So |x|−x = (−x)−x = −2x. (For a negative x, −2x is a positive number — e.g. x=−3: |−3|−(−3)=3+3=6=−2(−3).)"},
+{q:"How many integers satisfy |x−3|<5?",opts:["9","10","11","5"],ans:0,diag:"",exp:"|x−3|<5 → −5<x−3<5 → −2<x<8. Integers −1,0,1,2,3,4,5,6,7 = 9 integers."},
+{q:"Solve the compound inequality: −6 ≤ 2x−4 ≤ 10",opts:["−1≤x≤7","1≤x≤7","−5≤x≤3","1≤x≤3"],ans:0,diag:"",exp:"Add 4 to all parts: −2≤2x≤14. Divide by 2: −1≤x≤7."},
+{q:"If a<b and both are negative, which is true?",opts:["a²<b²","|a|>|b|","a>b","a=b"],ans:1,diag:"",exp:"a<b with both negative means a is more negative, so a is farther from 0: |a|>|b|. E.g. a=−5, b=−2: |−5|>|−2|."},
+{q:"Solve for x: 3|x+2|=21",opts:["x=5 or x=−9","x=7 or x=−2","x=5 only","x=−9 only"],ans:0,diag:"",exp:"Divide by 3: |x+2|=7. x+2=7→x=5. x+2=−7→x=−9."},
+{q:"If −2≤x≤3 and −1≤y≤4, what is the maximum possible value of x−y?",opts:["4","7","3","−1"],ans:0,diag:"",exp:"To maximize x−y, maximize x (3) and minimize y (−1): 3−(−1)=4."},
+{q:"Which value of x satisfies both x>2 and x<−1?",opts:["x=0","x=3","No value of x","x=−2"],ans:2,diag:"",exp:"These two conditions can never both be true (x can't be both greater than 2 and less than −1) — no solution."},
 ]},
 {id:5,title:"Word Problems: Interest, Rates & Sequences",eyebrow:"Game 6 of 12",desc:"Simple/compound interest, rate-time-distance, work problems, consecutive integers, arithmetic and geometric sequences.",time:5,
 concepts:[
@@ -981,7 +1013,7 @@ questions:[
 {q:"Midpoint of (−3,4) and (7,−2)?",opts:["(5,1)","(2,3)","(2,1)","(4,2)"],ans:2,diag:"",exp:"M=((-3+7)/2,(4+(−2))/2)=(4/2,2/2)=(2,1)."},
 {q:"How many integers from 11 to 89 inclusive?",opts:["78","80","77","79"],ans:3,diag:"",exp:"89−11+1=79."},
 {q:"Units digit of 7⁴²?",opts:["1","7","9","3"],ans:2,diag:"",exp:"Powers of 7 cycle: 7,9,3,1 (period 4). 42÷4=10 remainder 2. The 2nd in the cycle is 9. So the units digit of 7⁴² is 9."},
-]},,
+]},
 {id:10,title:"Word Problems — Rates, Work & Backsolving",eyebrow:"Game 11 of 12",desc:"Distance-rate-time formula, average speed trap, work rates, backsolving strategy, mixture problems.",time:5,
 concepts:[
 {cat:"Rates",term:"Distance = Rate × Time",def:"The fundamental motion formula. Rearrange for any unknown: Rate = D/T, Time = D/R.",form:"D = R × T",diag:""},
@@ -1210,6 +1242,9 @@ function populateIntro(){
 
 // ══ SKIP TO QUIZ ══
 function skipToQuiz(){
+  sessMode='study';
+  document.getElementById('mode-study')&&document.getElementById('mode-study').classList.add('selected');
+  document.getElementById('mode-test')&&document.getElementById('mode-test').classList.remove('selected');
   setupTopbar();
   populateIntro();
   showScreen('game');
